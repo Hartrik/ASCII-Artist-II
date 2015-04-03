@@ -1,0 +1,14 @@
+
+/** text */
+.label-title  { -fx-font-weight: bold; -fx-font-size: 13; }
+.label-number { -fx-font-weight: bold; -fx-font-size: 14; }
+
+/** pozadí */
+.background-left  { -fx-background-image: url("Noisy%20texture%201.png"); }
+.background-right { -fx-background-image: url("Noisy%20texture%202.png"); }
+
+/** odsazení */
+.padding-panel         { -fx-padding: 10 10 10 10; }
+.padding-bottom-small  { -fx-padding: 0  0  5  0; }
+.padding-bottom-normal { -fx-padding: 0  0  10 0; }
+.padding-bottom-big    { -fx-padding: 0  0  20 0; }

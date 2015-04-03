@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxWidth="300.0" minWidth="250.0" prefHeight="500.0" prefWidth="250.0" styleClass="background-right" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.hartrik.asciiartist.gui.SettingsController">
+  <children>
+    <Accordion fx:id="accordion" maxWidth="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <panes>
+        <TitledPane alignment="TOP_LEFT" animated="true" contentDisplay="CENTER" expanded="true" graphicTextGap="4.0" maxWidth="300.0" minWidth="250.0" prefHeight="-1.0" prefWidth="250.0" text="Základní nastavení" fx:id="x2">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <VBox fillWidth="false" prefHeight="414.0" prefWidth="246.0" spacing="10.0" styleClass="padding-panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <Label styleClass="label-title" text="Znaky" />
+                    <RadioButton id="oneChar" fx:id="rCharsAuto" mnemonicParsing="false" selected="true" text="Automaticky">
+                      <toggleGroup>
+                        <ToggleGroup fx:id="group1" />
+                      </toggleGroup>
+                      <tooltip>
+                        <Tooltip text="Znak bude vybrán na základě plochy, kterou zabírá." />
+                      </tooltip>
+                    </RadioButton>
+                    <CheckBox fx:id="cReversePalette" mnemonicParsing="false" text="Převrátit paletu" underline="false">
+                      <VBox.margin>
+                        <Insets left="20.0" />
+                      </VBox.margin>
+                    </CheckBox>
+                    <RadioButton id="oneChar" fx:id="rCharsFixed" mnemonicParsing="false" text="Z jednoho znaku" toggleGroup="$group1" underline="false" />
+                    <TextField id="character" fx:id="tChar" minHeight="-1.0" prefWidth="100.0" text="M">
+                      <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" />
+                      </VBox.margin>
+                    </TextField>
+                    <Label styleClass="label-title" text="Barva pozadí" />
+                    <ColorPicker fx:id="pBackground" prefWidth="100.0">
+                      <VBox.margin>
+                        <Insets bottom="10.0" fx:id="x1" />
+                      </VBox.margin>
+                    </ColorPicker>
+                    <Label styleClass="label-title" text="Barva popředí" />
+                    <RadioButton fx:id="rColorAuto" mnemonicParsing="false" selected="true" text="Automaticky">
+                      <toggleGroup>
+                        <ToggleGroup fx:id="group2" />
+                      </toggleGroup>
+                    </RadioButton>
+                    <HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+                      <children>
+                        <RadioButton fx:id="rColorFixed" mnemonicParsing="false" text="Jedna barva" toggleGroup="$group2">
+                          <HBox.margin>
+                            <Insets right="25.0" />
+                          </HBox.margin>
+                        </RadioButton>
+                        <ColorPicker fx:id="pForeground" prefWidth="100.0" />
+                      </children>
+                      <padding>
+                        <Insets />
+                      </padding>
+                    </HBox>
+                  </children>
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x4" />
+                  </padding>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane id="" alignment="TOP_LEFT" animated="true" contentDisplay="CENTER" expanded="false" graphicTextGap="4.0" maxWidth="300.0" minWidth="250.0" prefWidth="250.0" text="Nastavení znaků" textAlignment="LEFT" textOverrun="ELLIPSIS" underline="false" fx:id="x9">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <VBox padding="$x4" prefHeight="412.0" prefWidth="226.0" spacing="10.0" styleClass="padding-panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <Label styleClass="label-title" text="Font" />
+                    <ComboBox fx:id="cFontType" minWidth="-Infinity" prefHeight="-1.0" prefWidth="200.0" scaleZ="1.0">
+                      <VBox.margin>
+                        <Insets bottom="5.0" fx:id="x6" />
+                      </VBox.margin>
+                    </ComboBox>
+                    <HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+                      <children>
+                        <Label text="velikost:">
+                          <HBox.margin>
+                            <Insets right="10.0" />
+                          </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cFontSize">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <Integer fx:value="8" />
+                              <Integer fx:value="9" />
+                              <Integer fx:value="10" />
+                              <Integer fx:value="11" />
+                              <Integer fx:value="12" />
+                              <Integer fx:value="14" />
+                              <Integer fx:value="16" />
+                              <Integer fx:value="18" />
+                              <Integer fx:value="20" />
+                              <Integer fx:value="22" />
+                              <Integer fx:value="24" />
+                              <Integer fx:value="26" />
+                              <Integer fx:value="28" />
+                              <Integer fx:value="36" />
+                              <Integer fx:value="48" />
+                              <Integer fx:value="72" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                      </children>
+                      <VBox.margin>
+                        <Insets bottom="10.0" top="-10.0" />
+                      </VBox.margin>
+                    </HBox>
+                    <Label styleClass="label-title" text="Proložení řádků" />
+                    <Label text="Čím menší, tím hustější text." wrapText="true">
+                      <VBox.margin>
+                        <Insets top="-5.0" fx:id="x10" />
+                      </VBox.margin>
+                    </Label>
+                    <Slider fx:id="sLineHeight" blockIncrement="5.0" max="200.0" minorTickCount="25" prefWidth="-1.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="padding-bottom-normal" value="100.0" />
+                    <Label styleClass="label-title" text="Viditelnost znaků" />
+                    <Label alignment="TOP_LEFT" prefWidth="-1.0" text="Nastavení úrovně, pod kterou už znaky nebudou vidět." wrapText="true" VBox.margin="$x10" />
+                    <Slider id="sLineHeight" fx:id="sSpaceLevel" blockIncrement="5.0" max="255.0" minorTickCount="25" prefWidth="-1.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="25.0" />
+                    <Label text="Může sloužit ke zvýraznění hlavního motivu." wrapText="true">
+                      <VBox.margin>
+                        <Insets top="-5.0" fx:id="x10" />
+                      </VBox.margin>
+                    </Label>
+                  </children>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane id="" alignment="TOP_LEFT" animated="true" cache="false" contentDisplay="CENTER" depthTest="INHERIT" expanded="false" maxWidth="300.0" minWidth="250.0" prefWidth="250.0" text="Znaková sada" wrapText="false" fx:id="x8">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <VBox prefHeight="436.0" prefWidth="226.0" spacing="10.0" styleClass="padding-panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <Label alignment="TOP_LEFT" graphicTextGap="4.0" minHeight="-1.0" minWidth="-1.0" opacity="1.0" prefWidth="-1.0" text="Nastavení znakové sady pro automatické dosazování znaků za pixelové body." wrapText="true" />
+                    <RadioButton fx:id="rCharsetAscii" mnemonicParsing="false" selected="true" text="ASCII">
+                      <toggleGroup>
+                        <ToggleGroup fx:id="group3" />
+                      </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="rCharsetWindows" mnemonicParsing="false" text="Windows 1250" toggleGroup="$group3" />
+                    <RadioButton fx:id="rCharsetOwn" mnemonicParsing="false" text="Vlastní" toggleGroup="$group3" />
+                    <Separator minHeight="0.0" prefHeight="0.0" prefWidth="206.0" />
+                    <Label styleClass="label-title" text="Vlastní znaková sada" />
+                    <TextArea id="userCharset" fx:id="taUserCharset" maxHeight="200.0" minHeight="40.0" prefHeight="-1.0" prefWidth="-1.0" promptText="Bílé znaky budou ignorovány." style="-fx-font-family: monospace" wrapText="true" VBox.vgrow="ALWAYS">
+                      <rotationAxis>
+                        <Point3D x="100.0" z="1.0" />
+                      </rotationAxis>
+                    </TextArea>
+                    <HBox alignment="TOP_RIGHT" prefHeight="21.0" prefWidth="206.0" VBox.vgrow="NEVER">
+                      <children>
+                        <MenuButton id="addChars" fx:id="mbAddChars" mnemonicParsing="false" popupSide="BOTTOM" text="+" />
+                      </children>
+                      <VBox.margin>
+                        <Insets top="-10.0" fx:id="x5" />
+                      </VBox.margin>
+                    </HBox>
+                  </children>
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x4" />
+                  </padding>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane id="" alignment="TOP_LEFT" animated="true" contentDisplay="CENTER" expanded="false" maxWidth="300.0" minHeight="-1.0" minWidth="250.0" prefWidth="250.0" text="Informace" fx:id="x3">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <VBox alignment="TOP_LEFT" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" spacing="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <VBox alignment="TOP_LEFT" prefHeight="106.0" prefWidth="-1.0" spacing="10.0" styleClass="padding-panel" VBox.vgrow="SOMETIMES">
+                      <children>
+                        <Label styleClass="label-title" text="ASCII Artist II" />
+                        <Label text="verze 1.1 (2015-04-03)" />
+                        <Label text="© 2015 Patrik Harag" />
+                        <Label text="Všechna práva vyhrazena." VBox.margin="$x5" />
+                      </children>
+                    </VBox>
+                    <VBox alignment="CENTER_LEFT" minHeight="295.9998779296875" minWidth="246.0" prefHeight="295.9998779296875" prefWidth="246.0" spacing="0.0" VBox.vgrow="SOMETIMES">
+                      <children>
+                        <ImageView fitHeight="280.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
+                          <image>
+                            <Image url="@Image%20-%20info.png" />
+                          </image>
+                          <VBox.margin>
+                            <Insets left="30.0" />
+                          </VBox.margin>
+                        </ImageView>
+                      </children>
+                    </VBox>
+                  </children>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+      </panes>
+    </Accordion>
+  </children>
+  <stylesheets>
+    <URL value="@Skin.css" />
+  </stylesheets>
+</AnchorPane>
